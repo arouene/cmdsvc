@@ -1,0 +1,20 @@
+[General]
+address = ":3001"
+#crt_file = "/tmp/test.crt"
+#key_file = "/tmp/test.key"
+workdir = "/opt/service/"
+debug = false
+
+[[Services]]
+name = "consul_load"
+route = "/consul/tl1/load"
+command = "ansible-playbook -i inventory/eu1 -l tl1_consul playbook/consul_load.yml &> /srv/ansible/consul_load.log"
+environ = ["CONSUL_DATA_REPOSITORY=LuccaSA/Infra.Configuration", "CONSUL_DATA_BRANCH=master"]
+workdir = "/srv/ansible/infra-lucca"
+groups = ["Plateform", "Jenkins"]
+
+[[Services]]
+name = "test"
+route = "/test"
+command = "echo \"Hello, it's $(date +%c)\""
+groups = ["Everybody"]

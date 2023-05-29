@@ -1,0 +1,9 @@
+[[Auth]]
+user = "arouene"
+token = "ABCD"
+groups = ["Plateform"]
+
+[[Auth]]
+user = "jenkins"
+token = "ABCD"
+groups = ["Jenkins"]

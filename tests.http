@@ -1,0 +1,16 @@
+-*- restclient -*-
+
+# test
+POST http://localhost:3001/api/test
+Content-Type: application/json
+{}
+
+# ansible-playbook ...
+POST http://localhost:3001/api/consul/tl1/load
+Content-Type: application/json
+{}
+
+# get list of jobs
+GET http://localhost:3001/api/list
+Content-Type: application/json
+{}
